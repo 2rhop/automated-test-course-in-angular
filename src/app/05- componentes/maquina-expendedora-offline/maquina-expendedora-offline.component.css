@@ -1,0 +1,55 @@
+ .bg-machine {
+   padding: 2vh 0;
+   margin-top: 5vh;
+   display: flex;
+   align-content: space-between;
+   justify-content: center;
+   flex-wrap: wrap;
+   background-color: #536262;
+   border-radius: 5px;
+ }
+
+ .card:nth-of-type(odd) {
+   background-color: bisque;
+ }
+
+ .card:nth-of-type(even) {
+   background-color: beige;
+ }
+
+ .card {
+   padding-top: 1rem;
+   margin: 5px;
+ }
+
+ .flex-box {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .card>i {
+   font-size: 4rem;
+ }
+
+ a>i {
+   margin-right: .5rem;
+ }
+
+ .notif {
+   position: fixed;
+   bottom: 0;
+   z-index: 99;
+   display: flex;
+   justify-content: center;
+ }
+
+ .status {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 999;
+   padding: .2rem .5rem;
+   border-radius: 0 0 5px 0;
+   font-variant-caps: all-small-caps;
+ }

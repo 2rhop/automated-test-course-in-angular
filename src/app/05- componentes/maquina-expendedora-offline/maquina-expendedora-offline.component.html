@@ -1,0 +1,21 @@
+<div class="container-fluid notif alert alert-info alert-dismissible fade show" role="alert" *ngIf="objComprado">
+  Usted ha comprado el objeto:
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>{{objComprado}}</strong>
+</div>
+<span class="status alert alert-danger font-weight-bold text-danger">sin conexión</span>
+<div class="bg-machine container">
+  <div class="card flex-box" style="width: 20rem;" *ngFor="let item of objetos">
+    <i class="fa fa-{{item.icono}}"></i>
+    <div class="card-body flex-box">
+      <h4 class="card-title">{{item.nombre}}</h4>
+      <p class="card-text">{{item.info}}</p>
+      <p class="card-text">
+        <strong>precio:</strong>{{item.precio}}</p>
+      <a href="#" class="btn btn-primary" (click)="comprarObjeto(item.nombre)">
+        <i class="fa fa-money"></i>Comprar</a>
+    </div>
+  </div>
+</div>
