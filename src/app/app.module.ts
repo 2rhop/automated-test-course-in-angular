@@ -6,19 +6,22 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PremioComponent } from './05- componentes/premio/premio.component';
 import { MaquinaExpendedoraOfflineComponent } from './05- componentes/maquina-expendedora-offline/maquina-expendedora-offline.component';
+import { MaquinaExpendedoraOnlineComponent } from './05- componentes/maquina-expendedora-online/maquina-expendedora-online.component';
+import { MaquinaExpendedoraService } from './05- componentes/maquina-expendedora-online/maquina-expendedora.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     PremioComponent,
-    MaquinaExpendedoraOfflineComponent
+    MaquinaExpendedoraOfflineComponent,
+    MaquinaExpendedoraOnlineComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [MaquinaExpendedoraService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
