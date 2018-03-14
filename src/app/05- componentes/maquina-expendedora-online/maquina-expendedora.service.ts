@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { OBJETOS } from '../maquina-expendedora-offline/maquina-expendedora';
 import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class MaquinaExpendedoraService {
@@ -10,8 +11,8 @@ export class MaquinaExpendedoraService {
   constructor(private http: Http) { }
 
   getObjetos(): Observable<any> {
-    // return of(OBJETOS);
-    return this.http.get(<string>'http://localhost:3000/objetos');
+    return of(OBJETOS);
+    // return this.http.get(<string>'http://localhost:3000/objetos').map(res=>res.json());
   }
 
 }

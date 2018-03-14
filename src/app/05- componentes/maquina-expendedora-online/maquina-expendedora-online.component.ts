@@ -41,10 +41,10 @@ export class MaquinaExpendedoraOnlineComponent implements OnInit {
   }
 
   getObjetos() {
-    let obj:any[];
+    let obj: any[];
     this.service.getObjetos().subscribe(res => {
       console.log('conectado');
-      obj = res.json();
+      obj = res;
     },
       error => {
         console.log('error');
@@ -57,6 +57,12 @@ export class MaquinaExpendedoraOnlineComponent implements OnInit {
         this.objetos = obj;
       }
     )
+  }
+
+  getObjetosAsync() {
+    setTimeout(() => {
+      this.getObjetos();
+    }, 3000);
   }
 
 }
