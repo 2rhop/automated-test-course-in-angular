@@ -1,4 +1,4 @@
-import { TestBed, async, fakeAsync, ComponentFixture } from "@angular/core/testing";
+import { TestBed, async, fakeAsync, ComponentFixture, tick } from "@angular/core/testing";
 import { MaquinaExpendedoraOnlineComponent } from "./maquina-expendedora-online.component";
 import { DebugElement } from "@angular/core";
 import { MaquinaExpendedoraService } from "./maquina-expendedora.service";
@@ -62,4 +62,11 @@ fdescribe('Componente `maquina-expendedora-online`', () => {
         expect(msj).toContain(comp.objComprado);
     });
 
+    it('debe llamar al metodo getObjetosAsync() y esperar por el resultado (ASYNC)', async(() => {
+        comp.getObjetosAsync();
+        fixt.whenStable().then(() => {
+            expect(comp.objetos).toBeDefined();
+        })
+    }));
+    
 });
