@@ -13,9 +13,11 @@ fdescribe('Componente `maquina-expendedora-online`', () => {
     let servicio_falso: any;
 
     beforeEach(() => {
-        servicio_falso = {
-            getObjetos: () => of(OBJETOS)
-        }
+        // servicio_falso = {
+        //     getObjetos: () => of(OBJETOS)
+        // }
+        servicio_falso = jasmine.createSpyObj('MaquinaExpendedoraService', ['getObjetos']);
+        servicio_falso.getObjetos.and.returnValue(of(OBJETOS));
 
         TestBed.configureTestingModule({
             declarations: [MaquinaExpendedoraOnlineComponent],
@@ -42,7 +44,7 @@ fdescribe('Componente `maquina-expendedora-online`', () => {
 
     it('debe renderizar en el HTML la misma cantidad de elementos del servicio', () => {
         const elementos = debug.queryAll(By.css('.card'));
-        expect(elementos.length).toBe(OBJETOS.length);        
+        expect(elementos.length).toBe(OBJETOS.length);
     });
 
     it('debe mostrar un cartel mostrando el objeto comprado, depues de dar click en comprar', () => {
