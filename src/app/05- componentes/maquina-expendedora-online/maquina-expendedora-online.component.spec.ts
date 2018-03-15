@@ -68,5 +68,11 @@ fdescribe('Componente `maquina-expendedora-online`', () => {
             expect(comp.objetos).toBeDefined();
         })
     }));
-    
+
+    it('debe llamar al metodo getObjetosAsync() y esperar 3seg por el resultado (FAKE ASYNC)', fakeAsync(() => {
+        comp.getObjetosAsync();
+        tick(3000);
+        expect(comp.objetos).toBeDefined();
+    }));
+
 });
