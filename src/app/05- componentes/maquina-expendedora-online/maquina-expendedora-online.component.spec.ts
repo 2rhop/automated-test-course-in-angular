@@ -5,6 +5,7 @@ import { MaquinaExpendedoraService } from "./maquina-expendedora.service";
 import { of } from "rxjs/observable/of";
 import { OBJETOS } from "../maquina-expendedora-offline/maquina-expendedora";
 import { By } from "@angular/platform-browser";
+import { HttpModule } from "@angular/http";
 
 fdescribe('Componente `maquina-expendedora-online`', () => {
     let fixt: ComponentFixture<MaquinaExpendedoraOnlineComponent>;
@@ -16,13 +17,18 @@ fdescribe('Componente `maquina-expendedora-online`', () => {
         // servicio_falso = {
         //     getObjetos: () => of(OBJETOS)
         // }
-        servicio_falso = jasmine.createSpyObj('MaquinaExpendedoraService', ['getObjetos']);
-        servicio_falso.getObjetos.and.returnValue(of(OBJETOS));
+        // servicio_falso = jasmine.createSpyObj('MaquinaExpendedoraService', ['getObjetos']);
+        // servicio_falso.getObjetos.and.returnValue(of(OBJETOS));
 
         TestBed.configureTestingModule({
+            imports: [HttpModule],
             declarations: [MaquinaExpendedoraOnlineComponent],
-            providers: [{ provide: MaquinaExpendedoraService, useValue: servicio_falso }]
+            // providers: [{ provide: MaquinaExpendedoraService, useValue: servicio_falso }]
+            providers: [MaquinaExpendedoraService]
         }).compileComponents();
+
+        servicio_falso = TestBed.get(MaquinaExpendedoraService);
+        spyOn(servicio_falso, 'getObjetos').and.returnValue(of(OBJETOS));
 
         fixt = TestBed.createComponent(MaquinaExpendedoraOnlineComponent);
         comp = fixt.componentInstance;
