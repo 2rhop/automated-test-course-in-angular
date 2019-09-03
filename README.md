@@ -1,28 +1,21 @@
-# CursoNgTdd
+# Curso de pruebas automatizadas con angular + jasmine + karma
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
+## Descripción
 
-## Development server
+Curso desarrollado para entender mejor como funcionan las pruebas automatizadas en [*angular*](https://angular.io/) utilizando [*Jasmine*](https://jasmine.github.io/) y [*Karma*](https://karma-runner.github.io/latest/index.html) para la creación y ejecución de las mismas. Incorpora un proyecto sobre el cual se realizan las pruebas y una presentación en la que se explican los pasos. Se utilizó además [*json-server*](https://www.npmjs.com/package/json-server) para la realización de servidor-mock.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Instalación
 
-## Code scaffolding
+``` bash
+git clone https://github.com/2rhop/automated-test-course-in-angular.git ng-test
+    
+cd ng-test
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+npm i
 
-## Build
+ng serve
+``` 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### **URL de la presentacion:** 
+https://docs.google.com/presentation/d/1rW1yMUpxz18P9JK1ZeQ1Ved0jPIWhw88HkJB6aTWOk4/edit?usp=sharing
